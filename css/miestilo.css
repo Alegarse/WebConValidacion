@@ -1,0 +1,32 @@
+/* Implemento colores que no existen predefinidos en BootStrap*/
+.bg-naranjito {background-color: rgb(214, 150, 55)}
+.text-contraste {color: rgb(47, 55, 63)}
+
+/*Para definir otro tipo de letra importo su fontfamily aqui,por ejemplo para body*/
+
+/*Para redefinir un color predeterminado de BootStrap*/
+
+section  {text-align: center}
+
+.jumbotron {background-color: rgb(206, 108, 51)}
+
+.lugares {background-color:rgb(87,156,167)}
+
+.con {background-color:rgb(129,173,78)}
+
+footer {text-align: center}
+
+.header {
+  color: #36A0FF;
+  font-size: 27px;
+  padding: 10px;
+}
+
+.bigicon {
+  font-size: 35px;
+  color: #36A0FF;
+}
+
+.row {
+  margin-top: 10px;
+}

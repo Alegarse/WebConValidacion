@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Coloco la mía debajo para que prevalezca sobre la de BootStrap -->
+    <link rel="stylesheet" href="css/miestilo.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
+    <!-- Estos dos enlaces son para la validción del calendario (DatePickerControl) -->
+    <script type="text/javascript" src="js/datepickercontrol.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/datepickercontrol.css">
+    <style>
+        small {
+            visibility: hidden;
+        }
+    </style>
+    <!-- Este script es para habilitar el Tooltips de BootStrap -->
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script type="text/javascript" src="js/validacion.js"></script>
+    <title>Senderismo en Arroyo de la Miel</title>
+</head>
+
+<body>
+
+    <!--BARRA DE NAVEGACIÓN-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+        <!-- ESTE ES EL LOGO DEL MENÚ-->
+        <a class="navbar-brand" href="#"><img src="img/logoS.png" width="60"><b>Senderismo A.M.</b></a>
+
+        <!-- ESTE ES EL MENU HAMBURGUESA-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#bene">¿Beneficios?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#donde">Rutas sugeridas</a>
+                </li>
+
+                <!-- ESTE ES  UN DROPDOWN PARA SUBMENU DE NAVEGACIÓN-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Añadidos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#conse">Consejos</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#info">Info</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ESTE ES EL CARRUSEL-->
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/Carousel1.jpg" class="d-block w-100" alt="Comentario imagen 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>Zona teleférico</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Carousel2.jpg" class="d-block w-100" alt="Comentario imagen 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>Mirador del lobo</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Carousel3.jpg" class="d-block w-100" alt="Comentario imagen 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>Calamorro</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Carousel4.jpg" class="d-block w-100" alt="Comentario imagen 4">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>Mina teleférico</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Carousel5.jpg" class="d-block w-100" alt="Comentario imagen 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>Repetidor de Mijas</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- BIENVENIDA CON JUMBOTRON. SIRVE PARA PONER ALGO LLAMATIVO-->
+    <section id="jumbo">
+        <div class="jumbotron">
+            <h2 class="display-4">Bienvenidos a la página de los fans del senderismo del Arroyo de la Miel</h2>
+            <p class="lead">Descubrirás la maravillosa experiencia de conocer la localidad como nunca antes</p>
+            <hr class="my-4">
+            <p>Aviso para navegantes: Engancha! ;).</p>
+
+            <!-- BOTON PARA LALLAMADA AL MODAL -->
+            <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#modal1">Saber
+                más</a>
+
+            <!-- MODAL DE BOOTSTRAP -->
+            <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Tu inspiración ha llegado</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Cuando sientas la brisa en la cara, esa sensación hormigueante que te recorre el cuerpo
+                            entero, es cuando conocerás y sabrás de primera mano que esta es la actividad que
+                            estabas buscando
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="bene">
+        <h5 class="display-4"><br>Beneficios de practicar senderismo<br></h5>
+        <div class="card-deck mt-8">
+            <div class="card">
+                <img class="card-img-top" src="img/Cdeck1.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Beneficia el sistema circulatorio</h5>
+                    <p class="card-text">El senderismo (trekking si lo practicamos en la montaña) es una actividad
+                        aeróbica que beneficia a nuestro sistema circulatorio. Practicando senderismo fortalecemos
+                        nuestro corazón, algo que puede ayudarnos a prevenir posibles patologías cardíacas y a
+                        mantener nuestra presión arterial en unos valores óptimos.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="img/Cdeck2.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Fortalece músculos y huesos</h5>
+                    <p class="card-text">Nuestros músculos y huesos también se ven beneficiados por esta actividad.
+                        En el caso de los músculos, los que más trabajan son los del tren inferior haciendo especial
+                        hincapié en cuádriceps y glúteos, sobre todo si en nuestra ruta incluimos subidas y bajadas.
+                        Los huesos también se ven fortalecidos y aumentan su densidad ósea, algo especialmente
+                        importante en el caso de las mujeres de cara a prevenir la osteoporosis.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="img/Cdeck3.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Limpia los pulmones</h5>
+                    <p class="card-text">Al tratarse de una actividad al aire libre que generalmente se practica en
+                        el
+                        campo o en la montaña, el senderismo además nos anima a respirar aire mucho más puro que el
+                        de
+                        la ciudad y a evadirnos de nuestras numerosas obligaciones diarias, dándonos un respiro
+                        (nunca mejor dicho) tanto físico como mental.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RUTAS SUGERIDAS REALIZADO EN GRID -->
+    <section id="donde">
+        <div class="lugares">
+            <h5 class="display-4"><br>Rutas sugeridas para empezar<br></h5>
+            <div class="card-deck mt-8">
+                <div class="card">
+                    <img src="img/ruta1.PNG" class="card-img-top rounded" alt="Descripcion 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Mirador Cañada del Lobo desde Arroyo de la Miel </h5>
+                        <p class="card-text">Iniciamos la ruta por el curso seco del Arroyo de los Gatos. Subiendo el
+                            arroyo
+                            llegaremos al Llano de Avefrías y girando a la izquierda seguiremos por el sendero PR-A-172
+                            Puertos de Torremolinos. Este sendero desemboca en la parte alta del carril asfaltado hasta
+                            llegar al mirador. Una vez visitado el mirador de la Cañada del Lobo y disfrutado de las
+                            estupendas vistas que nos ofrece volvemos sobre nuestros pasos.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Dificultad: Moderada</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/Ruta2.PNG" class="card-img-top" alt="Descripcion 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Subida al Repetidor desde Benalmadena</h5>
+                        <p class="card-text">Toda la ruta es muy bonita y se lleva bastante bien.
+                            La baja desde la ermita es recomendable hacerla por el mismo sitio por donde se sube ya
+                            que por donde hemos bajado es una pista de descenso de mtb y hay muchísimas piedras sueltas
+                            y es muy fácil doblarse un tobillo.</p>
+                        <p class="card-text"><small class="text-muted">Dificultad: Facil</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/Ruta3.PNG" class="card-img-top" alt="Descripcion 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Subida al teleférico desde Benalmadena</h5>
+                        <p class="card-text">Recorrido suave aunque las cuestas que tendrás que superar en los dos
+                            primeros
+                            kilómetros te puedan hacer pensar lo contrario.
+                            Recomiendo hacer la subida por el mismo camino que tome en la bajada ya que el primero es
+                            muy exigente y en ningún caso se recomienda realizarlo en bicicleta ya que la ruta es muy
+                            estrecha
+                            e inapropiada. </p>
+                        <p class="card-text"><small class="text-muted">Dificultad: Moderada</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--COLLAPSE DE BOOTSTRAP TIPO ACORDEON -->
+    <section id="conse">
+        <div class="con">
+            <h5 class="display-4"><br>Consejos para practicar esta aficción<br></h5>
+            <div class="container">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Planifica la salida con antelación
+                                </button>
+                            </h2>
+                        </div>
+                        <!-- Collapse-show indica cual se muestra al principio -->
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                No se trata de salir al campo y echar a andar para ver hasta dónde llegamos. Es
+                                necesario
+                                que tengamos en cuenta quiénes vamos a participar en la salida (especialmente si
+                                contamos
+                                en el grupo con personas mayores o con niños) y que elijamos una ruta adecuada para
+                                todos.
+                                No hace falta que sea demasiado dura ni muy larga, puesto que el objetivo de este tipo
+                                de
+                                salidas es, más que nada, disfrutar del momento.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Lleva contigo agua y comida
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Si optamos por realizar una ruta ya establecida seguramente encontremos fuentes o
+                                riachuelos
+                                por el camino donde podamos abastecernos de agua. Pero nunca está de más llevar con
+                                nosotros
+                                nuestras propias provisiones. Para comer por el camino son muy prácticos los frutos
+                                secos
+                                como
+                                nueces, almendras o avellanas, que nos darán energía y nos mantendrán saciados durante
+                                bastante
+                                tiempo.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Protégete del sol de forma adecuada
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Comienzan a llegar los días de mucho calor y, si salimos al campo o a la montaña sin
+                                protección
+                                solar, podemos terminar volviendo a casa con quemaduras o con una insolación. Protege
+                                siempre tu
+                                cabeza con una gorra o un pañuelo y haz lo mismo siempre con niños y personas mayores.
+                                Aplica
+                                protección solar en todas las partes del cuerpo que queden al aire haciendo especial
+                                hincapié en
+                                hombros, orejas, nariz y escote, donde la piel es delicada y está muy expuesta al sol.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFour">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Lleva siempre contigo un pequeño botiquín
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                No ocupa apenas espacio en la mochila y puede ser de mucha utilidad en el caso de
+                                pequeñas
+                                heridas. Asegúrate de que en un bolsa impermeable llevas tiritas, esparadrapo, unas
+                                gasas
+                                estériles y material para limpiar heridas como agua oxigenada o betadine. Tampoco está
+                                de
+                                más meter unas pastillas o geles de glucosa o unas pastillas de sales.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFive">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    No te olvides el móvil
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                siempre pensamos que no nos puede pasar nada, pero es mejor prevenir que curar. Lleva
+                                siempre
+                                contigo tu teléfono móvil para poder llamar en caso de emergencia: si nos perdemos, si
+                                un
+                                compañero o nosotros mismos sufre una caída o lesión o ante cualquier imprevisto lo
+                                mejor es
+                                avisar a los servicios de emergencia para que ellos nos digan cómo debemos actuar. Una
+                                batería
+                                de repuesto totalmente cargada también es conveniente.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION DE INFORMACION-->
+    <section id="info">
+        <div class="container-fluid bg-dark text-light">
+            <h5 class="display-4"><br>Información adiccional<br></h5>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 text-center">
+                    <dl class="m-5">
+                        <dt class="Display">Dirección:</dt>
+                        <dd>Calle La higuera</dd>
+                        <dt>Correo:</dt>
+                        <dd>agscm2@gmail.com</dd>
+                        <dt>Teléfono:</dt>
+                        <dd>655 243 886</dd>
+                        <dt>Redes Sociales:</dt>
+                        <dd><a href="https://github.com/Alegarse" target="blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/alegarse" target="blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="https://twitter.com/Alegarse" target="blank"><i
+                                    class="fab fa-twitter-square"></i></a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-12 col-md-6  embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item p-5"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1132.4111479928742!2d-4.530314043853634!3d36.603696105991474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72fc849a8bb12f%3A0xac8e645f45efb0cf!2zMzbCsDM2JzE0LjAiTiA0wrAzMSc0Ny4wIlc!5e0!3m2!1ses!2ses!4v1551291693043"
+                        width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <footer id="contacto">
+        <h5 class="display-4"><br>Contacto y sugerencias<br></h5>
+        <div class="container">
+            <form method="POST" action="" onsubmit="return validar();">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre obligatorio"
+                                onchange="quitarError('nombreHelp')">
+                            <small id="nombreHelp" class="form-text text-danger">Campo alfanumérico y
+                                obligatorio</small>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos obligatorios"
+                                onchange="quitarError('apellidosHelp')">
+                            <small id="apellidosHelp" class="form-text text-danger">Campo alfanumérico y
+                                obligatorio</small>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="email" placeholder="Email obligatorio">
+                            <small id="emailHelp" class="form-text text-danger">Campo obligatorio con formato mail
+                                (xxx@xxx.x)</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <input type="text" class="form-control" id="DPC_edit1_DD/MM/YYYY"
+                                placeholder="Fecha nacimiento obligatoria" onchange="quitarError('fechaNacHelp')">
+                            <small id="fechaNacHelp" class="form-text text-danger">La fecha no puede estar vacía</small>
+                        </div>
+
+                        <div class="col-3">
+                            <select class="form-control" id="provincia" onchange="quitarError('provinciaHelp')">
+                                <option value="0">Elije tu provincia</option>
+                                <option value="1">Almería</option>
+                                <option value="2">Cádiz</option>
+                                <option value="3">Córdoba</option>
+                                <option value="4">Granada</option>
+                                <option value="5">Huelva</option>
+                                <option value="6">Jaén</option>
+                                <option value="7">Málaga</option>
+                                <option value="8">Sevilla</option>
+                            </select>
+                            <small id="provinciaHelp" class="form-text text-danger">Debes seleccionar una provincia</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="aceptar"
+                                    onchange="quitarError('aceptarHelp')">
+                                <label class="form-check-label" for="aceptar">
+                                    Acepto la <a href="" data-toggle="modal" data-target="#confidencialidad">Política de
+                                        confidencialidad</a></label>
+                                <small id="aceptarHelp" class="form-text text-danger">Es obligatorio marcar esta
+                                    casilla</small>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary" onclick="limpiarResultado()">Enviar</button>
+                        </div>
+                    </div> 
+                </div>
+            </form>
+            <!-- Modal política de confidencialidad-->
+            <div class="modal fade" id="confidencialidad" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"><b>Política de confidencialidad</b>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-align-left">
+                            <p>De acuerdo a lo establecido en la Ley Orgánica 15/1999 de 13 de diciembre, de 
+                                Protección de Datos de Carácter Personal, y demás legislación aplicable.</p>
+
+                            <p>Senderismo A.M., titular del web site "Senderismo A.M." es la titular de la 
+                                base de datos generada con los datos de carácter personal suministrados por los usuarios.</p>
+                            
+                            <p>La información personal recabada de los usuarios registrados es almacenada en 
+                                bases de datos propiedad de Senderismo A.M., que asume las medidas de índole 
+                                técnica, organizativa y de seguridad que garanticen la confidencialidad e 
+                                integridad de la información de acuerdo con lo establecido en la Ley Orgánica 
+                                15/1999 de 13 de diciembre, de Protección de Datos de Carácter Personal, y 
+                                demás legislación aplicable. Asimismo, Senderismo A.M. garantiza la 
+                                confidencialidad de los Datos Personales. No obstante, Senderismo A.M. 
+                                revelará a las autoridades públicas competentes los Datos Personales y cualquier 
+                                otra información que esté en su poder o sea accesible a través de sus sistemas y 
+                                sea requerida de conformidad con las disposiciones legales y reglamentarias aplicables al caso.</p>
+                            
+                            <p>Senderismo A.M. requiere que los usuarios, para acceder a y/o utilizar algunos de 
+                                los Servicios, proporcionen previamente a Uriarte & Asociados ciertos datos de 
+                                carácter personal (en adelante, los "Datos Personales"), que serán tratados e 
+                                incorporados a un fichero automatizado, que en su caso estará registrado o dado 
+                                de alta ante la autoridad competente, con las finalidades que en cada caso correspondan. 
+                                Todas estas circunstancias serán previa y debidamente advertidas por Senderismo A.M. 
+                                a los Usuarios, en los casos y en la forma en que ello resulta legalmente exigible.</p>
+                            
+                            <p>El usuario autoriza el tratamiento automatizado de los datos personales que 
+                                voluntariamente ha suministrado, para el acceso a alguno de los servicios del web site, 
+                                y que son necesarios para la prestación de dichos servicios, así como para la oferta y 
+                                contratación de otros productos y servicios de Senderismo A.M.. Los Datos Personales 
+                                recogidos serán incorporados a los correspondientes ficheros titularidad de Senderismo A.M..</p>
+                            
+                            <p>El usuario responderá, en cualquier caso, de la veracidad, exactitud, vigencia y autenticidad 
+                                de los Datos Personales facilitados, reservándose Senderismo A.M., el derecho a excluir de 
+                                los servicios registrados a todo usuario que haya facilitado datos falsos, sin prejuicio 
+                                de las demás acciones que procedan en Derecho.</p>
+                            
+                            <p>Cualquier usuario registrado puede en cualquier momento ejercer el derecho a acceder, rectificar 
+                                y, en su caso, cancelar sus datos de carácter personal suministrados mediante comunicación 
+                                escrita dirigida a Senderismo A.M.. (Ref: LORTAD).</p>
+                            
+                            <p><b>Nota legal</b></p>
+                            <p>Todo material, marcas registradas u otras propiedades intelectuales de este website son propiedad 
+                                de Senderismo A.M. o de sus compañías afiliadas, y están protegidas por los derechos de autor.</p>
+                            
+                            <p>Está permitida su reproducción para uso personal.</p>
+                            
+                            <p>Queda prohibida cualquier modificación, copia, alquiler, préstamo, trasmisión y difusión no 
+                                autorizada. El material de este website no puede ser vendido ni distribuido de otra forma 
+                                con ánimo de lucro.</p>
+                            
+                            <p>Los links existentes en los sites de Senderismo A.M. pueden llevarle fuera de la red de 
+                                Senderismo A.M.. Queda fuera de nuestra responsabilidad el contenido, exactitud u objetivo 
+                                de otros websites; los links son suministrados por Senderismo A.M., de buena fe y no se nos 
+                                puede responsabilizar de los eventuales cambios en los sites con los que establecemos un link.</p>
+                            
+                            <p>Ni Senderismo A.M., ni ninguna de sus sociedades vinculadas, ni ninguna otra parte implicada 
+                                en la creación, producción o suministro de este website serán responsables de daños, costos, 
+                                pérdidas o responsabilidades directas, imprevistos, indirectos o punitivos que puedan producirse 
+                                por el acceso o uso de este web.</p>
+                            
+                            <p>Todo el contenido es facilitado tal cual es. Ni Senderismo A.M., ni ninguna de sus sociedades 
+                                vinculadas garantizan la exactitud del material contenido en este site, ni que se ajuste a 
+                                cualquier uso personal. Además Senderismo A.M. no será responsable de los daños o de los virus 
+                                que puedan infectar a su ordenador u otra propiedad suya debido al uso o acceso-telecarga de 
+                                cualquier material de la web. Es posible que algunas jurisdicciones no permitan ciertas 
+                                limitaciones de garantías y daños, por lo que algunas de las antes citadas exclusiones pueden 
+                                no ser de aplicación en su totalidad para ustedes.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Aceptar</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
